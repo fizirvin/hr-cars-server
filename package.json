@@ -1,0 +1,20 @@
+{
+  "name": "hr-cars-server",
+  "version": "1.0.0",
+  "description": "server code for hr cars app project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fizirvin/hr-cars-server.git"
+  },
+  "keywords": [],
+  "author": "Irvin Fiz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fizirvin/hr-cars-server/issues"
+  },
+  "homepage": "https://github.com/fizirvin/hr-cars-server#readme"
+}
