@@ -1,13 +1,20 @@
-import path from './models/path.js';
-import techs from './models/technology.js';
+import cars from './models/cars.js';
+
 
 export const resolvers = {
-    Query: {
-        async paths(){
-            return await path.find();
-          },
-          async techs(){
-            return await techs.find().populate({path: 'paths', model: 'path'});
-          }
+  Query: {
+    async cars(){
+      return await cars.find();
     }
+  },
+  Mutation: {
+    async newCar(_, { input }){
+      const item = new cars(input);
+      await item.save();   
+      return item;
+    },
+    async updateCar(_,{ _id, input }){
+      return await cars.findByIdAndUpdate(_id,input, {new: true });
+    }
+  }
 }

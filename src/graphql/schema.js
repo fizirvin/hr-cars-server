@@ -2,40 +2,38 @@ import { makeExecutableSchema } from "graphql-tools";
 import { resolvers } from "./resolvers.js";
 
 const typeDefs = `
-    type Query {
-        paths: [Path]
-        techs: [Technology]
-    }
+type Query {
+    cars: [Car]
+}
 
-    type Path {
-        _id: ID!
-        pathName: String!
-        coreTechnology: String!
-        urlPath: String
-        urlPathCertification: String
-        urlImage: String
-        cert: String
-        courses: [Course]
-    }
+type Car {
+    _id: ID!
+    plates: String!
+    model: String!
+    type: String!
+    brand: String!
+    year: String!
+    color: String!
+    serial: String!
+}
 
-    type Course {
-        _id: ID!
-        courseName: String!
-        level: String!
-        urlImage: String
-        urlRepository: String
-        urlCourse: String
-        urlCertification: String
-        urlInstructor: String
-        platform: String
-    }
 
-    type Technology {
-        _id: ID!
-        technologyName: String
-        paths: [Path]
-    }
 
+type Mutation { 
+    newCar(_id: ID, input: NewCar ): Car
+    updateCar(_id: ID, input: NewCar ): Car
+
+}
+
+input NewCar {
+    plates: String!
+    model: String!
+    type: String!
+    brand: String!
+    year: String!
+    color: String!
+    serial: String!
+}
 
 
 `;
